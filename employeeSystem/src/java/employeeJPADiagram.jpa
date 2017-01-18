@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" v="2.6" sm="false" xs="false" id="_1484742363144476" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyClass="EmloyeePK" abs="false" class="Emloyee" visibile="true" minimized="false" rootElement="_1484742363144476" id="_1484742372204">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" visibile="true" name="firstName" id="_1484742389312479">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" visibile="true" name="lastName" id="_1484742389600480">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="boolean" visibile="true" name="gender" id="_1484742390384481">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.sql.Date" visibile="true" name="birthDate" id="_1484742393336482">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="byte" visibile="true" name="profilePic" id="_1484742393672483">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="boolean" visibile="true" name="active" id="_1484742394088484">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" visibile="true" name="id" id="_1484742372204477">
+                <jpa:generated-value strategy="AUTO"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Emloyee.findAll">
+            <jpa:query>Select e from Emloyee e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Emloyee.findByFirstName">
+            <jpa:query>Select e from Emloyee e where e.firstName=:firstName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Emloyee.findByLastName">
+            <jpa:query>Select e from Emloyee e where e.lastName=:lastName</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Emloyee.findByGender">
+            <jpa:query>Select e from Emloyee e where e.gender=:gender</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Emloyee.findByBirthDate">
+            <jpa:query>Select e from Emloyee e where e.birthDate=:birthDate</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Emloyee.findByProfilePic">
+            <jpa:query>Select e from Emloyee e where e.profilePic=:profilePic</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Emloyee.findByActive">
+            <jpa:query>Select e from Emloyee e where e.active=:active</jpa:query>
+        </jpa:nq>
+        <jpa:discriminator-column/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="ContractEmloyeePK" abs="false" class="ContractEmloyee" superclassId="_1484742372204" visibile="true" minimized="false" rootElement="_1484742363144476" id="_1484742641484">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="int" visibile="true" name="dailyRate" id="_1484742687944489">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" visibile="true" name="term" id="_1484742688432490">
+                <jpa:bv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="ContractEmloyee.findAll">
+            <jpa:query>Select e from ContractEmloyee e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="ContractEmloyee.findByDailyRate">
+            <jpa:query>Select c from ContractEmloyee c where c.dailyRate=:dailyRate</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="ContractEmloyee.findByTerm">
+            <jpa:query>Select c from ContractEmloyee c where c.term=:term</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyClass="CompanyEmloyeePK" abs="false" class="CompanyEmloyee" superclassId="_1484742372204" visibile="true" minimized="false" rootElement="_1484742363144476" id="_1484742644964">
+        <jpa:ts e="true"/>
+        <jpa:attributes>
+            <jpa:basic attribute-type="int" visibile="true" name="salary" id="_1484742729160491">
+                <jpa:bv/>
+            </jpa:basic>
+            <jpa:basic attribute-type="int" visibile="true" name="vacation" id="_1484742729432492">
+                <jpa:bv/>
+            </jpa:basic>
+        </jpa:attributes>
+        <jpa:nq e="false" name="CompanyEmloyee.findAll">
+            <jpa:query>Select e from CompanyEmloyee e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CompanyEmloyee.findBySalary">
+            <jpa:query>Select c from CompanyEmloyee c where c.salary=:salary</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="CompanyEmloyee.findByVacation">
+            <jpa:query>Select c from CompanyEmloyee c where c.vacation=:vacation</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:snp e="true" loc="BEFORE_PACKAGE">/**
+ * This file was generated by the JPA Modeler
+ */</jpa:snp>
+    <jpa:c>
+        <db u="jdbc:mysql://localhost:3306/emloyeesystem?zeroDateTimeBehavior=convertToNull" n="root" p="lexicon" d="com.mysql.jdbc.Driver"/>
+    </jpa:c>
+    <jpa:diagram>
+        <plane elementRef="_1484742363144476">
+            <shape elementRef="_1484742372204">
+                <Bounds x="382.0" y="66.0" width="144.0" height="197.0"/>
+            </shape>
+            <shape elementRef="_1484742641484">
+                <Bounds x="189.0" y="330.0" width="193.0" height="79.0"/>
+            </shape>
+            <shape elementRef="_1484742644964">
+                <Bounds x="526.0" y="330.0" width="197.0" height="79.0"/>
+            </shape>
+        </plane>
+    </jpa:diagram>
+</jpa:entity-mappings>

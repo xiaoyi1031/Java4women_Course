@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEmloyeeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListEmloyeeEmpty}" rendered="#{emloyeeController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{emloyeeController.items.rowCount > 0}">
+                    <h:outputText value="#{emloyeeController.pagination.pageFirstItem + 1}..#{emloyeeController.pagination.pageLastItem + 1}/#{emloyeeController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{emloyeeController.previous}" value="#{bundle.Previous} #{emloyeeController.pagination.pageSize}" rendered="#{emloyeeController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{emloyeeController.next}" value="#{bundle.Next} #{emloyeeController.pagination.pageSize}" rendered="#{emloyeeController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{emloyeeController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_active}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.active}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_birthdate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.birthdate}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_firstname}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.firstname}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_gender}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.gender}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_lastname}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.lastname}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_profilepic}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.profilepic}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_dtype}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dtype}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_salary}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.salary}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_vacation}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.vacation}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_dailyrate}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.dailyrate}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEmloyeeTitle_term}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.term}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{emloyeeController.prepareView}" value="#{bundle.ListEmloyeeViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{emloyeeController.prepareEdit}" value="#{bundle.ListEmloyeeEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{emloyeeController.destroy}" value="#{bundle.ListEmloyeeDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{emloyeeController.prepareCreate}" value="#{bundle.ListEmloyeeCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListEmloyeeIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

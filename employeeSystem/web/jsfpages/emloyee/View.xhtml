@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewEmloyeeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_id}"/>
+                    <h:outputText value="#{emloyeeController.selected.id}" title="#{bundle.ViewEmloyeeTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_active}"/>
+                    <h:outputText value="#{emloyeeController.selected.active}" title="#{bundle.ViewEmloyeeTitle_active}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_birthdate}"/>
+                    <h:outputText value="#{emloyeeController.selected.birthdate}" title="#{bundle.ViewEmloyeeTitle_birthdate}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_firstname}"/>
+                    <h:outputText value="#{emloyeeController.selected.firstname}" title="#{bundle.ViewEmloyeeTitle_firstname}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_gender}"/>
+                    <h:outputText value="#{emloyeeController.selected.gender}" title="#{bundle.ViewEmloyeeTitle_gender}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_lastname}"/>
+                    <h:outputText value="#{emloyeeController.selected.lastname}" title="#{bundle.ViewEmloyeeTitle_lastname}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_profilepic}"/>
+                    <h:outputText value="#{emloyeeController.selected.profilepic}" title="#{bundle.ViewEmloyeeTitle_profilepic}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_dtype}"/>
+                    <h:outputText value="#{emloyeeController.selected.dtype}" title="#{bundle.ViewEmloyeeTitle_dtype}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_salary}"/>
+                    <h:outputText value="#{emloyeeController.selected.salary}" title="#{bundle.ViewEmloyeeTitle_salary}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_vacation}"/>
+                    <h:outputText value="#{emloyeeController.selected.vacation}" title="#{bundle.ViewEmloyeeTitle_vacation}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_dailyrate}"/>
+                    <h:outputText value="#{emloyeeController.selected.dailyrate}" title="#{bundle.ViewEmloyeeTitle_dailyrate}"/>
+                    <h:outputText value="#{bundle.ViewEmloyeeLabel_term}"/>
+                    <h:outputText value="#{emloyeeController.selected.term}" title="#{bundle.ViewEmloyeeTitle_term}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{emloyeeController.destroyAndView}" value="#{bundle.ViewEmloyeeDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewEmloyeeEditLink}"/>
+                <br />
+                <h:commandLink action="#{emloyeeController.prepareCreate}" value="#{bundle.ViewEmloyeeCreateLink}" />
+                <br />
+                <h:commandLink action="#{emloyeeController.prepareList}" value="#{bundle.ViewEmloyeeShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewEmloyeeIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
