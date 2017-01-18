@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Student Registration System</title>
+    </h:head>
+    <h:body>
+        <h:form> 
+            <h:panelGrid columns="1" style="margin: 0 auto;">
+                <h:outputText value="Student Registration"/>
+                <h:panelGroup/>
+            </h:panelGrid>
+            <h:panelGrid columns="2" style="margin: 0 auto;">   
+                <h:outputLabel for="firstName" value="First Name"/>
+                <h:inputText id="firstName" value='#{studentBean.firstName}'/>
+
+                <h:outputLabel for="lastName" value="Last Name"/>
+                <h:inputText id="lastName" value='#{studentBean.lastName}'/>
+
+                <h:outputLabel for="age" value="Age"/>
+                <h:inputText id="age" value ='#{studentBean.age}'/>
+
+                <h:outputLabel for="subject1" value="Subject 1"/>
+                <h:inputText id="subject1" value ='#{studentBean.subject.subject1}'/>
+                
+                <h:outputLabel for="subject2" value="Subject 2"/>
+                <h:inputText id="subject2" value ='#{studentBean.subject.subject2}'/>
+                
+                <h:outputLabel for="subject3" value="Subject 3"/>
+                <h:inputText id="subject3" value ='#{studentBean.subject.subject3}'/>
+                
+                <h:outputLabel for="subject4" value="Subject 4"/>
+                <h:inputText id="subject4" value ='#{studentBean.subject.subject4}'/>
+                
+                <h:panelGroup/>
+                <h:commandButton value ="Submit" action="confirmation"></h:commandButton>
+
+            </h:panelGrid>
+        </h:form>  
+    </h:body>
+</html>
+
