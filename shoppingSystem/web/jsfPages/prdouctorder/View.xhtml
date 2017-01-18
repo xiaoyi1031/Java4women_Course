@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPrdouctorderTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPrdouctorderLabel_id}"/>
+                    <h:outputText value="#{prdouctorderController.selected.id}" title="#{bundle.ViewPrdouctorderTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewPrdouctorderLabel_amount}"/>
+                    <h:outputText value="#{prdouctorderController.selected.amount}" title="#{bundle.ViewPrdouctorderTitle_amount}"/>
+                    <h:outputText value="#{bundle.ViewPrdouctorderLabel_customerId}"/>
+                    <h:outputText value="#{prdouctorderController.selected.customerId}" title="#{bundle.ViewPrdouctorderTitle_customerId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{prdouctorderController.destroyAndView}" value="#{bundle.ViewPrdouctorderDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPrdouctorderEditLink}"/>
+                <br />
+                <h:commandLink action="#{prdouctorderController.prepareCreate}" value="#{bundle.ViewPrdouctorderCreateLink}" />
+                <br />
+                <h:commandLink action="#{prdouctorderController.prepareList}" value="#{bundle.ViewPrdouctorderShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPrdouctorderIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
