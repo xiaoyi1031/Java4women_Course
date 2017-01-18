@@ -30,6 +30,14 @@ public class Main {
         p1.setLastspokenwords("I am in the best form");
         em.persist(p1);
         
+        Player p2 = new Player();
+        p2.setId(8);
+        p2.setFirstname("Ming-tao");
+        p2.setJerseynumber(30);
+        p2.setLastname("Lee");
+        p2.setLastspokenwords("I am in the best form");
+        em.persist(p2);
+        
         Team t1 = new Team();
         t1.setTeamId(4);
         t1.setTeamname("Java4women");

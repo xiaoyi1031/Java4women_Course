@@ -88,7 +88,7 @@ public class Team implements Serializable {
 
     @Override
     public String toString() {
-        return "playermanagement.Team[ teamId=" + teamId + " ]";
+        return teamname + " [ teamId=" + teamId + " ]";
     }
     
 }

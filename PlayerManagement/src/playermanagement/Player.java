@@ -107,7 +107,7 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "playermanagement.Player[ id=" + id + " ]";
+        return firstname + " " + lastname +"[ id=" + id + " ]";
     }
     
 }
