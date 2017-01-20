@@ -19,6 +19,26 @@ public class StudentBean {
     private String firstName;
     private String lastName;
     private int age;
+    private String location;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+    
+    @Inject
+    private confirm con1;
+
+    public confirm getCon1() {
+        return con1;
+    }
+
+    public void setCon1(confirm con1) {
+        this.con1 = con1;
+    }
     
     @Inject
     private Subject subject;

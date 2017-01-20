@@ -1,0 +1,21 @@
+body{
+    font-family: "Century Gothic";
+    font-size: 14px;
+    font-style: bold;
+    
+    background-image: url("sky.jpg");
+    color: white;
+}
+
+h1{
+    color:#cc0000;
+}
+
+#rubtik{
+    font-size: x-large;
+    font-style: oblique;
+}
+
+#login-form{
+    
+}
