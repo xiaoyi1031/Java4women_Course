@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package student;
+package manageBean;
 
+
+import entities.Subject;
+import entities.confirm;
+import java.util.Date;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -20,6 +24,17 @@ public class StudentBean {
     private String lastName;
     private int age;
     private String location;
+    private Date date;
+    
+ 
+    
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
     public String getLocation() {
         return location;
